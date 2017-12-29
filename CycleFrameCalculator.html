@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+  
+  <head>
+    <meta charset="UTF-8"> 
+    <script type="text/javascript" src="CycleFrameCalculator.js"></script>
+      
+    <style>
+      body {
+        color: yellow;
+        background: black;
+      }
+  
+      canvas {
+        background: white;
+      }
+
+      div {
+        margin: 5px;
+      }
+
+      td {
+        padding: 5px;
+      }
+
+      #editor {
+        float: left;
+      }
+
+      #values {
+        float: left;
+      }
+
+      #values input[type="button"] {
+        border: 1px solid yellow;
+        background: rgb(24, 24, 0);
+        color: yellow;
+        padding: 10px;
+      }
+
+      #values input[type="button"]:disabled {
+        border: 0px solid yellow;
+        color: rgb(64, 64, 0);
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <h1>
+      Cycle Frame Calculator
+    </h1>
+
+    <p>
+      マウスでドラッグして、大まかに決めてから、矢印ボタンを押して微調整してください。
+    </p>
+
+    <div id="editor">
+      <canvas id="myCanvas" width="500" height="400">
+      </canvas>
+    </div>
+    <div id="values">
+      <input type="button" id="btnLeft" onclick="clickLeft()" value="<-" />
+      <input type="button" id="btnUp" onclick="clickUp()" value="Up" />
+      <input type="button" id="btnDown" onclick="clickDown()" value="Down" />
+      <input type="button" id="btnRight" onclick="clickRight()" value="->" />
+      <br />
+      <table>
+        <tr>
+          <td>A</td>
+          <td>Top tube</td>
+          <td><span id="textA" /></td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>Seat tube</td>
+            <td><span id="textB" /></td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>Head tube</td>
+            <td><span id="textC" /></td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Seat angle</td>
+            <td><span id="textD" /></td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>Head angle</td>
+            <td><span id="textE" /></td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td>BB drop</td>
+            <td><span id="textF" /></td>
+        </tr>
+        <tr>
+            <td>G</td>
+            <td>Wheel base</td>
+            <td><span id="textG" /></td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td>Rear center</td>
+            <td><span id="textH" /></td>
+        </tr>
+      </table>
+    </div>
+    <div id="log" style="width: 500px; word-wrap: normal"></div>
+    <canvas id="iconCanvas" width="90" height="30" style="visibility: hidden">
+    </canvas>
+  </body>
+
+</html>
